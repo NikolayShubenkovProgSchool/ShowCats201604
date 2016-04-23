@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import MapKit
 
 //    description =                 {
 //        "_content" = "Another picture, I've made at Tierpark Goldau.";
@@ -59,3 +59,19 @@ class Photo: NSObject {
         self.largeImageLink = largeURL
     }
 }
+
+extension Photo: MKAnnotation {
+    var coordinate:CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: lat, longitude: long)
+    }
+    var subtitle: String? {
+        return photoDescription
+    }
+}
+
+
+
+
+
+
+

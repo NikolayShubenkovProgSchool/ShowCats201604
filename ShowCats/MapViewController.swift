@@ -50,7 +50,7 @@ class MapViewController: UIViewController {
     }
     
     func updateMapViewWithPhotos(photos:[Photo]){
-        
+        mapView.addAnnotations(photos)
     }
 }
 
