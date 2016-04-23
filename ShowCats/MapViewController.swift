@@ -24,7 +24,8 @@ class MapViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         
-        self.mapView.showsUserLocation = true
+        mapView.showsUserLocation = true
+        mapView.delegate = self
     }
     
     @IBAction func showUserLocation(sender: AnyObject) {
@@ -53,6 +54,41 @@ class MapViewController: UIViewController {
         mapView.addAnnotations(photos)
     }
 }
+
+extension MapViewController : MKMapViewDelegate {
+    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        //если нам передали метку пользователя, которая не относится к типу Photo
+        //вернем nil. Тогда MapView сам что-нибудь придумает
+        guard let photoToShow = annotation as? Photo else {
+            return nil
+        }
+        
+        //уникальный идентификатор для метки с фотографией
+        let id = "PhotoID"
+        var photoView = mapView.dequeueReusableAnnotationViewWithIdentifier(id)
+        
+        if photoView == nil {
+            photoView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: id)
+        }
+        
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        
+        //зададим левую часть детального пузыря
+        photoView?.leftCalloutAccessoryView = imageView
+        
+        photoView?.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
+
+        //можно ли показывать пузырек с подробной информацией
+        photoView?.canShowCallout = true
+        
+        photoView?.annotation = annotation
+        
+        return photoView
+    }
+    
+}
+
 
 
 
