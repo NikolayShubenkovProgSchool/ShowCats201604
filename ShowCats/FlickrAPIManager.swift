@@ -38,6 +38,13 @@ class FlickrAPIManager: NSObject {
         params["nojsoncallback"] = 1
         
         params["tags"] = searchWord
+        params["extras"] = [//запросить доп мнформацию по фотографиям
+            "url_l",        //ссылка на картинку большого размера
+            "geo",          //это координаты
+            "owner_name",   //автор фотографии
+            "url_s",        //ссылка для иконки
+            "description"   //описание, которое предоставил автор
+        ].joinWithSeparator(",")//схлопнем массив строк в одну строку с запятой
         
         
         Alamofire.request(.GET, //Метод запроса
@@ -46,8 +53,54 @@ class FlickrAPIManager: NSObject {
                           encoding: .URL,//как параметры передать. URL - означает, что они будут добавлены к ссылке
                           headers: nil)//дополнительные заголовки запроса
         .responseJSON { (response) in
-            print(response)
+            if response.result.error != nil {
+                print("error to find photo")
+                return
+            }
+            
+            guard let dataToParse = response.result.value as? [String: AnyObject] else {
+                print("error to get data to parse")
+                return
+            }
+            let parsedObjects = self.parsePhotos(dataToParse)
+            print(parsedObjects)
+        }
+    }
+    
+    func parsePhotos( photosInfoes:[String : AnyObject] ) -> [Photo]{
+        
+        guard let photos = photosInfoes["photos"] as? [String : AnyObject],//достанем словарь по ключу photos
+              let photoArray = photos["photo"] as? [ [String : AnyObject] ]// достанем массив словарей по ключу photo
+            else {
+            return [Photo]()
+        }
+        var readyObjects = [Photo]()
+        //переберем массив из словариков
+        for photoInfo in photoArray {
+            if let parsedPhoto = Photo(info: photoInfo){
+                readyObjects.append(parsedPhoto)
+            }
         }
         
+        return readyObjects
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
