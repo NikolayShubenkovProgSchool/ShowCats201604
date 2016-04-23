@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import SDWebImage
 
 class MapViewController: UIViewController {
     
@@ -73,21 +74,37 @@ extension MapViewController : MKMapViewDelegate {
         }
         
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        imageView.contentMode = .ScaleAspectFill
         
         //зададим левую часть детального пузыря
         photoView?.leftCalloutAccessoryView = imageView
-        
+        //справа будет кнопка
         photoView?.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
 
         //можно ли показывать пузырек с подробной информацией
         photoView?.canShowCallout = true
         
-        photoView?.annotation = annotation
+        photoView?.annotation = photoToShow
         
         return photoView
     }
     
+    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        guard let photo = view.annotation as? Photo else {
+            return
+        }
+        
+        let imageView = view.leftCalloutAccessoryView as! UIImageView
+        
+        imageView.sd_setImageWithURL(NSURL(string: photo.smallImageLink)!,
+                                     placeholderImage: nil,
+                                     options: [.ProgressiveDownload])
+    }
+    
 }
+
+
+
 
 
 
