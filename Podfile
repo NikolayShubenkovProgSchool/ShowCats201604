@@ -7,6 +7,7 @@ target 'ShowCats' do
 
 pod 'Alamofire', '~> 3.3'
 pod 'SDWebImage', '~> 3.7'
+pod 'ChameleonFramework', '~> 2.1'
 
 end
 

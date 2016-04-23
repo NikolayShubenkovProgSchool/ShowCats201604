@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import SDWebImage
+import ChameleonFramework
 
 class MapViewController: UIViewController {
     
@@ -20,6 +21,8 @@ class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Найди кота"
         
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
