@@ -7,21 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F26C44A1CCB5EA4002DA9E6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F26C4491CCB5EA4002DA9E6 /* MapKit.framework */; };
+		4F26C44C1CCB5F42002DA9E6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F26C44B1CCB5F42002DA9E6 /* MapViewController.swift */; };
+		4F26C44E1CCB6DE6002DA9E6 /* FlickrAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F26C44D1CCB6DE6002DA9E6 /* FlickrAPIManager.swift */; };
 		4F5A4C951CCB57E200C0CDE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5A4C941CCB57E200C0CDE2 /* AppDelegate.swift */; };
-		4F5A4C971CCB57E200C0CDE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5A4C961CCB57E200C0CDE2 /* ViewController.swift */; };
 		4F5A4C9A1CCB57E200C0CDE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F5A4C981CCB57E200C0CDE2 /* Main.storyboard */; };
 		4F5A4C9C1CCB57E200C0CDE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5A4C9B1CCB57E200C0CDE2 /* Assets.xcassets */; };
 		4F5A4C9F1CCB57E200C0CDE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F5A4C9D1CCB57E200C0CDE2 /* LaunchScreen.storyboard */; };
+		B18508ECE81A79E0E4D5EA84 /* Pods_ShowCats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78EDE64A1F516E80C8F733B3 /* Pods_ShowCats.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F26C4491CCB5EA4002DA9E6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4F26C44B1CCB5F42002DA9E6 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		4F26C44D1CCB6DE6002DA9E6 /* FlickrAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrAPIManager.swift; sourceTree = "<group>"; };
 		4F5A4C911CCB57E200C0CDE2 /* ShowCats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShowCats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5A4C941CCB57E200C0CDE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4F5A4C961CCB57E200C0CDE2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4F5A4C991CCB57E200C0CDE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4F5A4C9B1CCB57E200C0CDE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F5A4C9E1CCB57E200C0CDE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F5A4CA01CCB57E200C0CDE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78EDE64A1F516E80C8F733B3 /* Pods_ShowCats.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShowCats.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFB9AF4A899250C2547E1807 /* Pods-ShowCats.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShowCats.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShowCats/Pods-ShowCats.release.xcconfig"; sourceTree = "<group>"; };
+		E51CC6D068A7B233D4781A6D /* Pods-ShowCats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShowCats.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShowCats/Pods-ShowCats.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F26C44A1CCB5EA4002DA9E6 /* MapKit.framework in Frameworks */,
+				B18508ECE81A79E0E4D5EA84 /* Pods_ShowCats.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +50,8 @@
 			children = (
 				4F5A4C931CCB57E200C0CDE2 /* ShowCats */,
 				4F5A4C921CCB57E200C0CDE2 /* Products */,
+				58927994FA65EFB11E3B7B36 /* Pods */,
+				E3DF0FF878977DCAFDE54674 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +67,32 @@
 			isa = PBXGroup;
 			children = (
 				4F5A4C941CCB57E200C0CDE2 /* AppDelegate.swift */,
-				4F5A4C961CCB57E200C0CDE2 /* ViewController.swift */,
 				4F5A4C981CCB57E200C0CDE2 /* Main.storyboard */,
+				4F26C44B1CCB5F42002DA9E6 /* MapViewController.swift */,
+				4F26C44D1CCB6DE6002DA9E6 /* FlickrAPIManager.swift */,
 				4F5A4C9B1CCB57E200C0CDE2 /* Assets.xcassets */,
 				4F5A4C9D1CCB57E200C0CDE2 /* LaunchScreen.storyboard */,
 				4F5A4CA01CCB57E200C0CDE2 /* Info.plist */,
 			);
 			path = ShowCats;
+			sourceTree = "<group>";
+		};
+		58927994FA65EFB11E3B7B36 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E51CC6D068A7B233D4781A6D /* Pods-ShowCats.debug.xcconfig */,
+				BFB9AF4A899250C2547E1807 /* Pods-ShowCats.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E3DF0FF878977DCAFDE54674 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F26C4491CCB5EA4002DA9E6 /* MapKit.framework */,
+				78EDE64A1F516E80C8F733B3 /* Pods_ShowCats.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +102,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F5A4CA31CCB57E200C0CDE2 /* Build configuration list for PBXNativeTarget "ShowCats" */;
 			buildPhases = (
+				E80A284E924D037A835D0DCB /* Check Pods Manifest.lock */,
 				4F5A4C8D1CCB57E200C0CDE2 /* Sources */,
 				4F5A4C8E1CCB57E200C0CDE2 /* Frameworks */,
 				4F5A4C8F1CCB57E200C0CDE2 /* Resources */,
+				01C949869FCDC9FD79DA34C4 /* Embed Pods Frameworks */,
+				9EA19C8C1E80E62FBF5415AA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,13 +164,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		01C949869FCDC9FD79DA34C4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShowCats/Pods-ShowCats-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EA19C8C1E80E62FBF5415AA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShowCats/Pods-ShowCats-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E80A284E924D037A835D0DCB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4F5A4C8D1CCB57E200C0CDE2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F5A4C971CCB57E200C0CDE2 /* ViewController.swift in Sources */,
 				4F5A4C951CCB57E200C0CDE2 /* AppDelegate.swift in Sources */,
+				4F26C44C1CCB5F42002DA9E6 /* MapViewController.swift in Sources */,
+				4F26C44E1CCB6DE6002DA9E6 /* FlickrAPIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,9 +332,11 @@
 		};
 		4F5A4CA41CCB57E200C0CDE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E51CC6D068A7B233D4781A6D /* Pods-ShowCats.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ShowCats/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ias.ShowCats;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -260,9 +345,11 @@
 		};
 		4F5A4CA51CCB57E200C0CDE2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFB9AF4A899250C2547E1807 /* Pods-ShowCats.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ShowCats/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ias.ShowCats;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -288,6 +375,7 @@
 				4F5A4CA51CCB57E200C0CDE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
