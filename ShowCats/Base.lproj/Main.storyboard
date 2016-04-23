@@ -71,7 +71,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KF3-Rw-1GG">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.69999999999999996" maximumZoomScale="4" translatesAutoresizingMaskIntoConstraints="NO" id="KF3-Rw-1GG">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gjX-9s-5NV">
@@ -100,6 +100,7 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="gjX-9s-5NV" id="Kym-lM-JfN"/>
+                        <outlet property="scrollView" destination="KF3-Rw-1GG" id="xF7-Lh-g6x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IJd-WC-4Xt" userLabel="First Responder" sceneMemberID="firstResponder"/>
