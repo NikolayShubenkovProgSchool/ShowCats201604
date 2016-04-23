@@ -25,7 +25,8 @@ class FlickrAPIManager: NSObject {
         
     }
   
-    func find(searchWord:String){
+    // последний параметр - это функция, принимающая опциональный массив из фото и опциональную строку с ошибкой
+    func find(searchWord:String,completion:(data:[Photo]?,error:String?)->Void){
         
         let methodName = "flickr.photos.search"
         
@@ -38,13 +39,13 @@ class FlickrAPIManager: NSObject {
         params["nojsoncallback"] = 1
         
         params["tags"] = searchWord
-        params["extras"] = [//запросить доп мнформацию по фотографиям
+        params["extras"] = [//запросить доп. информацию по фотографиям
             "url_l",        //ссылка на картинку большого размера
             "geo",          //это координаты
             "owner_name",   //автор фотографии
             "url_s",        //ссылка для иконки
             "description"   //описание, которое предоставил автор
-        ].joinWithSeparator(",")//схлопнем массив строк в одну строку с запятой
+        ].joinWithSeparator(",")//схлопнем массив строк в одну строку, разделив строки запятой
         
         
         Alamofire.request(.GET, //Метод запроса
@@ -55,15 +56,20 @@ class FlickrAPIManager: NSObject {
         .responseJSON { (response) in
             if response.result.error != nil {
                 print("error to find photo")
+                completion(data: nil,
+                          error: response.result.error!.description)
                 return
             }
             
             guard let dataToParse = response.result.value as? [String: AnyObject] else {
                 print("error to get data to parse")
+                completion(data: nil,
+                    error: response.result.error!.description)
                 return
             }
             let parsedObjects = self.parsePhotos(dataToParse)
             print(parsedObjects)
+            completion(data: parsedObjects, error: nil)
         }
     }
     

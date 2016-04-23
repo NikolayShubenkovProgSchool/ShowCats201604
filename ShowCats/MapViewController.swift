@@ -13,6 +13,7 @@ class MapViewController: UIViewController {
     
     var locationManager = CLLocationManager()
     var apiManger = FlickrAPIManager()
+    var photos:[Photo] = []
     
     @IBOutlet weak var mapView: MKMapView!
 
@@ -35,9 +36,24 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func searhButtonPressed(sender: AnyObject) {
-        apiManger.find("Cat")
+        apiManger.find("Cat") { (data, error) in
+            if error != nil {
+                print(error)
+                return
+            }
+            guard let dataExists = data else {
+                return
+            }
+            self.photos = dataExists
+            self.updateMapViewWithPhotos(self.photos)
+        }
     }
     
-
-    
+    func updateMapViewWithPhotos(photos:[Photo]){
+        
+    }
 }
+
+
+
+
