@@ -37,7 +37,7 @@ class FlickrAPIManager: NSObject {
         params["api_key"] = "2b2c9f8abc28afe8d7749aee246d951c"
         params["format"]  = "json"
         params["nojsoncallback"] = 1
-//        params["has_geo"] = true
+        params["has_geo"] = true
         
         params["tags"] = searchWord
         params["extras"] = [//запросить доп. информацию по фотографиям

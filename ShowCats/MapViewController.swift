@@ -29,6 +29,14 @@ class MapViewController: UIViewController {
         mapView.delegate = self
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        guard let vc = segue.destinationViewController as? PhotoDetailedViewController,
+            let photo = sender as? Photo else {
+                return
+        }
+        vc.photo = photo
+    }
+    
     @IBAction func showUserLocation(sender: AnyObject) {
         
         let coordinate = mapView.userLocation.coordinate
@@ -99,6 +107,14 @@ extension MapViewController : MKMapViewDelegate {
         imageView.sd_setImageWithURL(NSURL(string: photo.smallImageLink)!,
                                      placeholderImage: nil,
                                      options: [.ProgressiveDownload])
+    }
+    
+    //переход на новый экран при касании детального view на карте
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        guard let photo = view.annotation as? Photo else {
+            return
+        }
+        performSegueWithIdentifier("ShowPhoto", sender: photo)
     }
     
 }
